@@ -38,7 +38,7 @@ export function ShopFilters() {
 
   return (
     <form
-      className={`grid gap-4 border border-line bg-surface p-4 sm:p-5 md:grid-cols-2 lg:grid-cols-4 ${pending ? "opacity-70" : ""}`}
+      className={`grid gap-3 border border-line bg-surface p-3.5 sm:gap-4 sm:p-5 md:grid-cols-2 lg:grid-cols-4 ${pending ? "opacity-70" : ""}`}
       onSubmit={(event) => {
         event.preventDefault();
         const form = new FormData(event.currentTarget);
@@ -116,8 +116,8 @@ export function ShopFilters() {
         </select>
       </div>
 
-      <div className="md:col-span-2 lg:col-span-4">
-        <button type="submit" className="btn btn-secondary">
+      <div className="flex items-end md:col-span-2 lg:col-span-4">
+        <button type="submit" className="btn btn-secondary w-full sm:w-auto">
           Apply search
         </button>
       </div>

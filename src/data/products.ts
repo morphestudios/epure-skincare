@@ -114,15 +114,15 @@ export const products: Product[] = [
     howToUse:
       "Apply a pea-sized amount morning and night after serum. Press into cheeks and forehead until absorbed.",
     image: "/images/products/barrier-recovery-cream.jpg",
-    imageAlt: "Open cream jar held during a soft post-bath moisturising ritual",
+    imageAlt: "Glass cream jar with charcoal lid on warm sand surface",
     gallery: [
       {
         src: "/images/products/barrier-recovery-cream.jpg",
-        alt: "Open cream jar held during a soft post-bath moisturising ritual",
+        alt: "Glass cream jar with charcoal lid on warm sand surface",
       },
       {
         src: "/images/products/barrier-recovery-cream-2.jpg",
-        alt: "Glass cream jar with charcoal lid on warm sand surface",
+        alt: "Open cream jar held during a soft post-bath moisturising ritual",
       },
     ],
     featured: true,
@@ -156,7 +156,7 @@ export const products: Product[] = [
       },
       {
         src: "/images/products/mineral-soft-mist-2.jpg",
-        alt: "Unlabelled amber bottles on pale marble with sea salt",
+        alt: "Soft hydrated hands after a refreshing mist ritual",
       },
     ],
   },
@@ -250,15 +250,15 @@ export const products: Product[] = [
     howToUse:
       "Pat a rice-grain amount around the orbital bone morning and night. Do not pull or tug the skin.",
     image: "/images/products/eye-contour-concentrate.jpg",
-    imageAlt: "Calm eye-area care ritual with soft gel patches",
+    imageAlt: "Clear concentrate dropper with a luminous droplet",
     gallery: [
       {
         src: "/images/products/eye-contour-concentrate.jpg",
-        alt: "Calm eye-area care ritual with soft gel patches",
+        alt: "Clear concentrate dropper with a luminous droplet",
       },
       {
         src: "/images/products/eye-contour-concentrate-2.jpg",
-        alt: "Clear concentrate dropper with a luminous droplet",
+        alt: "Calm eye-area care ritual with soft gel patches",
       },
     ],
   },
@@ -284,15 +284,15 @@ export const products: Product[] = [
     howToUse:
       "As the last daytime skincare step, apply two finger-lengths to face and neck. Reapply as needed when outdoors.",
     image: "/images/products/daily-spf-fluid.jpg",
-    imageAlt: "Unlabelled amber fluid bottles on pale stone with mineral salt",
+    imageAlt: "Sheer cream texture smoothed across skin in soft light",
     gallery: [
       {
         src: "/images/products/daily-spf-fluid.jpg",
-        alt: "Unlabelled amber fluid bottles on pale stone with mineral salt",
+        alt: "Sheer cream texture smoothed across skin in soft light",
       },
       {
         src: "/images/products/daily-spf-fluid-2.jpg",
-        alt: "Sheer cream texture smoothed across skin in soft light",
+        alt: "Unlabelled amber fluid bottles on pale stone with mineral salt",
       },
     ],
   },
@@ -318,11 +318,11 @@ export const products: Product[] = [
     howToUse:
       "Saturate a cotton pad or pour into palms and press over face after cleansing. Do not rinse.",
     image: "/images/products/calming-tonic.jpg",
-    imageAlt: "Clear glass tonic bottle with soft caustic light on sand",
+    imageAlt: "Clear tonic droplet falling from a glass dropper into an open palm",
     gallery: [
       {
         src: "/images/products/calming-tonic.jpg",
-        alt: "Clear glass tonic bottle with soft caustic light on sand",
+        alt: "Clear tonic droplet falling from a glass dropper into an open palm",
       },
       {
         src: "/images/products/calming-tonic-2.jpg",

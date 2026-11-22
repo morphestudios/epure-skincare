@@ -90,14 +90,14 @@ export function CheckoutForm() {
 
   if (submitted) {
     return (
-      <div className="border border-line bg-surface px-6 py-14 text-center sm:px-10 sm:py-16">
+      <div className="mx-auto max-w-xl border border-line bg-surface px-6 py-14 text-center sm:px-10 sm:py-16">
         <p className="eyebrow">Preview complete</p>
-        <h2 className="mt-3 font-display text-4xl text-espresso">Thank you</h2>
-        <p className="mx-auto mt-4 max-w-lg text-muted">
+        <h2 className="mt-3 font-display text-4xl text-espresso md:text-5xl">Thank you</h2>
+        <p className="mx-auto mt-4 max-w-md text-muted">
           Your preview reference <span className="text-espresso">{orderRef}</span> was
           validated in this browser. No payment was taken and nothing will ship.
         </p>
-        <p className="mx-auto mt-4 max-w-md text-sm text-taupe">
+        <p className="mx-auto mt-5 max-w-sm border-t border-line pt-5 text-sm leading-relaxed text-taupe">
           ÉPURE is a portfolio concept experience — this checkout does not process
           purchases or payments.
         </p>
@@ -120,10 +120,10 @@ export function CheckoutForm() {
   }
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[1.4fr_0.9fr]">
-      <form onSubmit={onSubmit} className="space-y-6" noValidate>
+    <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.85fr)] lg:gap-12">
+      <form onSubmit={onSubmit} className="space-y-8" noValidate>
         <div
-          className="border border-sand bg-sand/30 px-4 py-3 text-sm leading-relaxed text-espresso"
+          className="border border-sand bg-sand/35 px-4 py-3.5 text-sm leading-relaxed text-espresso"
           role="note"
         >
           Portfolio concept — this form does not process purchases or payments. No
@@ -131,7 +131,7 @@ export function CheckoutForm() {
         </div>
 
         <fieldset className="space-y-4">
-          <legend className="font-display text-2xl text-espresso">Contact</legend>
+          <legend className="mb-1 font-display text-2xl text-espresso">Contact</legend>
           <div>
             <label htmlFor="fullName" className="eyebrow mb-2 block">
               Full name
@@ -185,8 +185,8 @@ export function CheckoutForm() {
           </div>
         </fieldset>
 
-        <fieldset className="space-y-4">
-          <legend className="font-display text-2xl text-espresso">Shipping</legend>
+        <fieldset className="space-y-4 border-t border-line pt-8">
+          <legend className="mb-1 font-display text-2xl text-espresso">Shipping</legend>
           <div>
             <label htmlFor="address" className="eyebrow mb-2 block">
               Street address
@@ -202,7 +202,7 @@ export function CheckoutForm() {
             {errors.address ? <p className="field-error">{errors.address}</p> : null}
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
-            <div>
+            <div className="sm:col-span-1">
               <label htmlFor="city" className="eyebrow mb-2 block">
                 City
               </label>
@@ -238,6 +238,7 @@ export function CheckoutForm() {
                 id="postalCode"
                 className="input"
                 autoComplete="postal-code"
+                inputMode="numeric"
                 value={values.postalCode}
                 onChange={(event) => updateField("postalCode", event.target.value)}
                 aria-invalid={Boolean(errors.postalCode)}
@@ -258,32 +259,33 @@ export function CheckoutForm() {
           </div>
         </fieldset>
 
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Link href="/cart" className="btn btn-secondary">
+        <div className="flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:items-center">
+          <Link href="/cart" className="btn btn-secondary w-full sm:w-auto">
             Review order
           </Link>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary w-full sm:w-auto">
             Complete preview
           </button>
         </div>
       </form>
 
-      <aside className="h-fit border border-line bg-surface p-6 sm:p-7">
+      <aside className="border border-line bg-surface p-6 sm:p-7 lg:sticky lg:top-24">
         <h2 className="font-display text-2xl text-espresso">Order summary</h2>
         <ul className="mt-5 space-y-4">
           {lines.map((line) => (
-            <li key={line.slug} className="flex justify-between gap-4 text-sm">
+            <li key={line.slug} className="flex justify-between gap-4 text-sm leading-snug">
               <span className="text-muted">
-                {line.product.name} × {line.quantity}
+                {line.product.name}
+                <span className="text-taupe"> × {line.quantity}</span>
               </span>
-              <span className="text-espresso">
+              <span className="shrink-0 text-espresso">
                 {formatZar(line.product.priceZar * line.quantity)}
               </span>
             </li>
           ))}
         </ul>
         <hr className="divider my-5" />
-        <div className="space-y-2 text-sm">
+        <div className="space-y-2.5 text-sm">
           <div className="flex justify-between">
             <span className="text-muted">Subtotal</span>
             <span>{formatZar(subtotal)}</span>
@@ -292,7 +294,7 @@ export function CheckoutForm() {
             <span className="text-muted">Shipping</span>
             <span>{shipping === 0 ? "Complimentary" : formatZar(shipping)}</span>
           </div>
-          <div className="flex justify-between pt-2 text-base text-espresso">
+          <div className="flex justify-between border-t border-line pt-3 text-base text-espresso">
             <span>Total</span>
             <span>{formatZar(total)}</span>
           </div>

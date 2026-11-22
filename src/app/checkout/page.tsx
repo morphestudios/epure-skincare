@@ -12,14 +12,14 @@ export default function CheckoutPage() {
     <div className="section-pad">
       <div className="container-page">
         <p className="eyebrow">Checkout</p>
-        <h1 className="mt-3 font-display text-5xl text-espresso md:text-6xl">
+        <h1 className="mt-2 font-display text-4xl text-espresso sm:text-5xl md:text-6xl">
           Review & confirm
         </h1>
-        <p className="mt-4 max-w-2xl text-muted">
+        <p className="mt-3 max-w-2xl text-muted">
           Enter shipping details to complete your preview. Totals update as you shop;
           no payment is collected on this site.
         </p>
-        <div className="mt-10">
+        <div className="mt-8 md:mt-10">
           <CheckoutForm />
         </div>
       </div>

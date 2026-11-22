@@ -1,6 +1,6 @@
 # ÉPURE Skincare
 
-Portfolio demo storefront for a fictional luxury skincare brand. Built with Next.js App Router, TypeScript, and Tailwind CSS.
+Immersive Morphè Studios portfolio demo — **ÉPURE · The Art of Ritual**. Next.js App Router, TypeScript, Tailwind, optional Three.js/R3F hero on hardware WebGL.
 
 ## Run locally
 
@@ -36,3 +36,5 @@ Open [http://localhost:3000](http://localhost:3000).
 - Prices are in ZAR.
 - Cart persists in `localStorage`.
 - Checkout and contact forms validate client-side only; no real payments or email delivery.
+- Pass 1 homepage: cinematic scroll storytelling + pointer-responsive hero. Simulated ÉPURE packaging mockups are labelled in alt text — not real product photos.
+- Do not push to GitHub until review.

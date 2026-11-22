@@ -114,15 +114,15 @@ export const products: Product[] = [
     howToUse:
       "Apply a pea-sized amount morning and night after serum. Press into cheeks and forehead until absorbed.",
     image: "/images/products/barrier-recovery-cream.jpg",
-    imageAlt: "Glass cream jar with charcoal lid on warm sand surface",
+    imageAlt: "ÉPURE Barrier Recovery Cream jar on warm marble — simulated branded render",
     gallery: [
       {
         src: "/images/products/barrier-recovery-cream.jpg",
-        alt: "Glass cream jar with charcoal lid on warm sand surface",
+        alt: "ÉPURE Barrier Recovery Cream jar on warm marble — simulated branded render",
       },
       {
         src: "/images/products/barrier-recovery-cream-2.jpg",
-        alt: "Open cream jar held during a soft post-bath moisturising ritual",
+        alt: "Dense ivory cream texture on ceramic spatula — simulated beauty macro",
       },
     ],
     featured: true,
@@ -250,15 +250,15 @@ export const products: Product[] = [
     howToUse:
       "Pat a rice-grain amount around the orbital bone morning and night. Do not pull or tug the skin.",
     image: "/images/products/eye-contour-concentrate.jpg",
-    imageAlt: "Clear concentrate dropper with a luminous droplet",
+    imageAlt: "ÉPURE Eye Contour Concentrate tube on linen — simulated branded render",
     gallery: [
       {
         src: "/images/products/eye-contour-concentrate.jpg",
-        alt: "Clear concentrate dropper with a luminous droplet",
+        alt: "ÉPURE Eye Contour Concentrate tube on linen — simulated branded render",
       },
       {
         src: "/images/products/eye-contour-concentrate-2.jpg",
-        alt: "Calm eye-area care ritual with soft gel patches",
+        alt: "Cool clear gel droplet on fingertip — simulated beauty detail",
       },
     ],
   },
@@ -284,15 +284,15 @@ export const products: Product[] = [
     howToUse:
       "As the last daytime skincare step, apply two finger-lengths to face and neck. Reapply as needed when outdoors.",
     image: "/images/products/daily-spf-fluid.jpg",
-    imageAlt: "Sheer cream texture smoothed across skin in soft light",
+    imageAlt: "ÉPURE Daily SPF Fluid pump bottle on limestone — simulated branded render",
     gallery: [
       {
         src: "/images/products/daily-spf-fluid.jpg",
-        alt: "Sheer cream texture smoothed across skin in soft light",
+        alt: "ÉPURE Daily SPF Fluid pump bottle on limestone — simulated branded render",
       },
       {
         src: "/images/products/daily-spf-fluid-2.jpg",
-        alt: "Unlabelled amber fluid bottles on pale stone with mineral salt",
+        alt: "Sheer tinted SPF film smoothed across skin — simulated beauty macro",
       },
     ],
   },

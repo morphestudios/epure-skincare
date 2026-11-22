@@ -25,12 +25,12 @@ export const metadata: Metadata = {
     template: "%s · ÉPURE Skincare",
   },
   description:
-    "ÉPURE — clinical minimalism with warm sensory luxury. Edited skincare rituals, priced in ZAR.",
+    "ÉPURE — The Art of Ritual. Immersive luxury skincare portfolio for Morphè Studios. Edited rituals, priced in ZAR.",
   metadataBase: new URL("https://epure.studio"),
   openGraph: {
     title: "ÉPURE Skincare",
     description:
-      "Quiet formulas for considered skin. A Cape Town skincare house.",
+      "The Art of Ritual — quiet formulas for considered skin. A Cape Town skincare house.",
     type: "website",
     locale: "en_ZA",
   },

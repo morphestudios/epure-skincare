@@ -52,7 +52,7 @@ export function Header() {
         <Link
           href="/"
           onClick={closeMenu}
-          className="font-display text-[1.55rem] leading-none tracking-[0.02em] text-espresso"
+          className="font-display text-[1.55rem] leading-none tracking-[0.02em] text-espresso transition-[letter-spacing,opacity] duration-300 hover:tracking-[0.05em]"
         >
           ÉPURE
         </Link>

@@ -29,11 +29,22 @@ function FiltersFallback() {
   );
 }
 
-export default async function ShopPage({
-  searchParams,
-}: {
-  searchParams: ShopSearchParams;
-}) {
+function ResultsFallback() {
+  return (
+    <div className="mt-6 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-y-12">
+      {Array.from({ length: 6 }).map((_, index) => (
+        <div key={index} className="space-y-3" aria-hidden>
+          <div className="skeleton aspect-[4/5] w-full" />
+          <div className="skeleton h-3 w-20" />
+          <div className="skeleton h-5 w-3/4" />
+          <div className="skeleton h-4 w-24" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+async function ShopResults({ searchParams }: { searchParams: ShopSearchParams }) {
   const params = await searchParams;
   const sort = (params.sort as SortOption) || "featured";
   const products = filterAndSortProducts({
@@ -43,6 +54,45 @@ export default async function ShopPage({
     query: params.q,
   });
 
+  return (
+    <>
+      <div className="mt-5 sm:mt-8 md:mt-10">
+        <Suspense fallback={<FiltersFallback />}>
+          <ShopFilters productCount={products.length} />
+        </Suspense>
+      </div>
+
+      <p className="mt-6 hidden text-sm text-taupe lg:block" aria-live="polite">
+        {products.length} {products.length === 1 ? "product" : "products"}
+      </p>
+
+      {products.length === 0 ? (
+        <div className="mt-6 lg:mt-8">
+          <EmptyState
+            title="No products match"
+            description="Try clearing a filter or searching a different term."
+            actionHref="/shop"
+            actionLabel="Reset filters"
+          />
+        </div>
+      ) : (
+        <div className="mt-6 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-y-12">
+          {products.map((product, index) => (
+            <Reveal key={product.slug} delayMs={Math.min(index, 5) * 70}>
+              <ProductCard product={product} priority={index < 3} />
+            </Reveal>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+export default function ShopPage({
+  searchParams,
+}: {
+  searchParams: ShopSearchParams;
+}) {
   return (
     <div className="section-pad">
       <div className="container-page">
@@ -57,34 +107,9 @@ export default async function ShopPage({
           </p>
         </div>
 
-        <div className="mt-5 sm:mt-8 md:mt-10">
-          <Suspense fallback={<FiltersFallback />}>
-            <ShopFilters productCount={products.length} />
-          </Suspense>
-        </div>
-
-        <p className="mt-6 hidden text-sm text-taupe lg:block" aria-live="polite">
-          {products.length} {products.length === 1 ? "product" : "products"}
-        </p>
-
-        {products.length === 0 ? (
-          <div className="mt-6 lg:mt-8">
-            <EmptyState
-              title="No products match"
-              description="Try clearing a filter or searching a different term."
-              actionHref="/shop"
-              actionLabel="Reset filters"
-            />
-          </div>
-        ) : (
-          <div className="mt-6 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-y-12">
-            {products.map((product, index) => (
-              <Reveal key={product.slug} delayMs={Math.min(index, 5) * 70}>
-                <ProductCard product={product} priority={index < 3} />
-              </Reveal>
-            ))}
-          </div>
-        )}
+        <Suspense fallback={<ResultsFallback />}>
+          <ShopResults searchParams={searchParams} />
+        </Suspense>
       </div>
     </div>
   );

@@ -21,7 +21,12 @@ type ShopSearchParams = Promise<{
 }>;
 
 function FiltersFallback() {
-  return <div className="skeleton h-40 w-full" aria-hidden />;
+  return (
+    <>
+      <div className="skeleton h-14 w-full lg:hidden" aria-hidden />
+      <div className="skeleton hidden h-40 w-full lg:block" aria-hidden />
+    </>
+  );
 }
 
 export default async function ShopPage({
@@ -43,27 +48,27 @@ export default async function ShopPage({
       <div className="container-page">
         <div className="max-w-2xl">
           <p className="eyebrow">Shop</p>
-          <h1 className="mt-3 font-display text-5xl text-espresso md:text-6xl">
+          <h1 className="mt-2 font-display text-4xl text-espresso sm:text-5xl md:mt-3 md:text-6xl">
             The collection
           </h1>
-          <p className="mt-4 text-muted">
+          <p className="mt-3 hidden text-muted sm:block md:mt-4">
             Filter by category or skin concern, then sort to find the right texture
             for your ritual.
           </p>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-5 sm:mt-8 md:mt-10">
           <Suspense fallback={<FiltersFallback />}>
-            <ShopFilters />
+            <ShopFilters productCount={products.length} />
           </Suspense>
         </div>
 
-        <p className="mt-8 text-sm text-taupe" aria-live="polite">
+        <p className="mt-6 hidden text-sm text-taupe lg:block" aria-live="polite">
           {products.length} {products.length === 1 ? "product" : "products"}
         </p>
 
         {products.length === 0 ? (
-          <div className="mt-8">
+          <div className="mt-6 lg:mt-8">
             <EmptyState
               title="No products match"
               description="Try clearing a filter or searching a different term."
@@ -72,7 +77,7 @@ export default async function ShopPage({
             />
           </div>
         ) : (
-          <div className="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:mt-8 lg:grid-cols-3 lg:gap-y-12">
             {products.map((product, index) => (
               <Reveal key={product.slug} delayMs={Math.min(index, 5) * 70}>
                 <ProductCard product={product} priority={index < 3} />

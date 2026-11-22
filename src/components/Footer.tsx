@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-line bg-sand/40">
+    <footer className="mt-auto border-t border-line bg-sand/35">
       <div className="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <p className="font-display text-3xl text-espresso">ÉPURE</p>
-          <p className="mt-4 max-w-sm text-[0.95rem] text-muted">
+          <p className="mt-4 max-w-sm text-[0.95rem] leading-relaxed text-muted">
             Clinical minimalism with warm sensory luxury. Skincare formulated for
             quiet rituals and considered daily care.
           </p>
@@ -35,21 +35,21 @@ export function Footer() {
 
         <div>
           <p className="eyebrow mb-4">Visit</p>
-          <p className="text-[0.95rem] text-muted">
+          <p className="text-[0.95rem] leading-relaxed text-muted">
             14 Buitenkant Street
             <br />
             Cape Town, 8001
             <br />
             South Africa
           </p>
-          <p className="mt-4 text-[0.95rem] text-muted">hello@epureskincare.demo</p>
+          <p className="mt-4 text-[0.95rem] text-muted">hello@epure.studio</p>
         </div>
       </div>
 
       <div className="border-t border-line">
         <div className="container-page flex flex-col gap-2 py-5 text-[0.8rem] text-taupe sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 ÉPURE Skincare. Portfolio demo only.</p>
-          <p>No real payments are processed on this site.</p>
+          <p>© 2026 ÉPURE Skincare</p>
+          <p>Priced in ZAR · Cape Town</p>
         </div>
       </div>
     </footer>

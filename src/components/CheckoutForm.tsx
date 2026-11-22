@@ -90,12 +90,16 @@ export function CheckoutForm() {
 
   if (submitted) {
     return (
-      <div className="border border-line bg-surface px-8 py-16 text-center">
-        <p className="eyebrow">Demo order recorded</p>
+      <div className="border border-line bg-surface px-6 py-14 text-center sm:px-10 sm:py-16">
+        <p className="eyebrow">Preview complete</p>
         <h2 className="mt-3 font-display text-4xl text-espresso">Thank you</h2>
         <p className="mx-auto mt-4 max-w-lg text-muted">
-          Your demo order <span className="text-espresso">{orderRef}</span> was
-          validated locally. No payment was collected and nothing will ship.
+          Your preview reference <span className="text-espresso">{orderRef}</span> was
+          validated in this browser. No payment was taken and nothing will ship.
+        </p>
+        <p className="mx-auto mt-4 max-w-md text-sm text-taupe">
+          ÉPURE is a portfolio concept experience — this checkout does not process
+          purchases or payments.
         </p>
         <Link href="/shop" className="btn btn-primary mt-8">
           Return to shop
@@ -107,8 +111,8 @@ export function CheckoutForm() {
   if (lines.length === 0) {
     return (
       <EmptyState
-        title="Nothing to check out"
-        description="Add products to your cart before completing the demo checkout."
+        title="Nothing to review"
+        description="Add products to your bag before continuing to checkout."
         actionHref="/shop"
         actionLabel="Browse products"
       />
@@ -118,10 +122,12 @@ export function CheckoutForm() {
   return (
     <div className="grid gap-10 lg:grid-cols-[1.4fr_0.9fr]">
       <form onSubmit={onSubmit} className="space-y-6" noValidate>
-        <div className="border border-sand bg-sand/30 px-4 py-3 text-sm text-espresso">
-          <strong className="font-medium">Demo checkout only.</strong> Do not enter
-          real payment card details. This form collects shipping contact fields for
-          validation and does not process payments.
+        <div
+          className="border border-sand bg-sand/30 px-4 py-3 text-sm leading-relaxed text-espresso"
+          role="note"
+        >
+          Portfolio concept — this form does not process purchases or payments. No
+          card details are requested.
         </div>
 
         <fieldset className="space-y-4">
@@ -137,8 +143,13 @@ export function CheckoutForm() {
               value={values.fullName}
               onChange={(event) => updateField("fullName", event.target.value)}
               aria-invalid={Boolean(errors.fullName)}
+              aria-describedby={errors.fullName ? "fullName-error" : undefined}
             />
-            {errors.fullName ? <p className="field-error">{errors.fullName}</p> : null}
+            {errors.fullName ? (
+              <p id="fullName-error" className="field-error">
+                {errors.fullName}
+              </p>
+            ) : null}
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
@@ -247,12 +258,17 @@ export function CheckoutForm() {
           </div>
         </fieldset>
 
-        <button type="submit" className="btn btn-primary">
-          Place demo order
-        </button>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Link href="/cart" className="btn btn-secondary">
+            Review order
+          </Link>
+          <button type="submit" className="btn btn-primary">
+            Complete preview
+          </button>
+        </div>
       </form>
 
-      <aside className="h-fit border border-line bg-surface p-6">
+      <aside className="h-fit border border-line bg-surface p-6 sm:p-7">
         <h2 className="font-display text-2xl text-espresso">Order summary</h2>
         <ul className="mt-5 space-y-4">
           {lines.map((line) => (

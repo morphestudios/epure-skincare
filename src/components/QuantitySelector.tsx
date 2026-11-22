@@ -25,7 +25,7 @@ export function QuantitySelector({
       <div className="inline-flex items-stretch border border-line bg-surface">
         <button
           type="button"
-          className="px-3 text-espresso hover:bg-sand/50"
+          className="min-h-11 min-w-11 px-3 text-espresso hover:bg-sand/50 disabled:opacity-40"
           aria-label="Decrease quantity"
           onClick={() => onChange(Math.max(min, value - 1))}
           disabled={value <= min}
@@ -48,7 +48,7 @@ export function QuantitySelector({
         />
         <button
           type="button"
-          className="px-3 text-espresso hover:bg-sand/50"
+          className="min-h-11 min-w-11 px-3 text-espresso hover:bg-sand/50 disabled:opacity-40"
           aria-label="Increase quantity"
           onClick={() => onChange(Math.min(max, value + 1))}
           disabled={value >= max}

@@ -14,6 +14,11 @@ export type SkinConcern =
   | "Uneven Texture"
   | "Fine Lines";
 
+export interface ProductImage {
+  src: string;
+  alt: string;
+}
+
 export interface Product {
   slug: string;
   name: string;
@@ -25,8 +30,11 @@ export interface Product {
   concerns: SkinConcern[];
   ingredients: string[];
   howToUse: string;
+  /** Primary catalog / card image */
   image: string;
   imageAlt: string;
+  /** Additional PDP gallery images */
+  gallery?: ProductImage[];
   featured?: boolean;
 }
 

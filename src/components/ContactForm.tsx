@@ -45,8 +45,8 @@ export function ContactForm() {
       <div className="border border-line bg-surface px-6 py-10">
         <h2 className="font-display text-3xl text-espresso">Message received</h2>
         <p className="mt-3 text-muted">
-          This is a demo form. Your note was validated locally and was not sent to a
-          mailbox.
+          Thank you — your note was validated locally. For this concept site, messages
+          are not delivered to a live inbox.
         </p>
       </div>
     );

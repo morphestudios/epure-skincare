@@ -9,12 +9,14 @@ const display = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 const body = Outfit({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,12 +25,12 @@ export const metadata: Metadata = {
     template: "%s · ÉPURE Skincare",
   },
   description:
-    "ÉPURE is a fictional luxury skincare portfolio demo — clinical minimalism with warm sensory luxury, priced in ZAR.",
-  metadataBase: new URL("https://epure-skincare.demo"),
+    "ÉPURE — clinical minimalism with warm sensory luxury. Edited skincare rituals, priced in ZAR.",
+  metadataBase: new URL("https://epure.studio"),
   openGraph: {
     title: "ÉPURE Skincare",
     description:
-      "A portfolio demo storefront for a fictional Cape Town skincare house.",
+      "Quiet formulas for considered skin. A Cape Town skincare house.",
     type: "website",
     locale: "en_ZA",
   },
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en-ZA" className={`${display.variable} ${body.variable} h-full`}>
-      <body className="flex min-h-full flex-col antialiased">
+      <body className="flex min-h-full flex-col overflow-x-hidden antialiased">
         <CartProvider>
           <a
             href="#main"

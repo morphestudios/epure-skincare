@@ -38,7 +38,7 @@ export function ShopFilters() {
 
   return (
     <form
-      className={`grid gap-4 border border-line bg-surface p-5 md:grid-cols-2 lg:grid-cols-4 ${pending ? "opacity-70" : ""}`}
+      className={`grid gap-4 border border-line bg-surface p-4 sm:p-5 md:grid-cols-2 lg:grid-cols-4 ${pending ? "opacity-70" : ""}`}
       onSubmit={(event) => {
         event.preventDefault();
         const form = new FormData(event.currentTarget);

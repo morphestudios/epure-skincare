@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductGallery } from "@/components/ProductGallery";
+import { Reveal } from "@/components/Reveal";
 import { getProductBySlug, products } from "@/data/products";
 import { formatZar } from "@/lib/format";
 
@@ -39,6 +40,11 @@ export default async function ProductPage({ params }: { params: ProductParams })
   const product = getProductBySlug(slug);
   if (!product) notFound();
 
+  const gallery =
+    product.gallery && product.gallery.length > 0
+      ? product.gallery
+      : [{ src: product.image, alt: product.imageAlt }];
+
   const related = products
     .filter(
       (item) =>
@@ -64,16 +70,7 @@ export default async function ProductPage({ params }: { params: ProductParams })
         </nav>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="product-media relative aspect-[4/5]">
-            <Image
-              src={product.image}
-              alt={product.imageAlt}
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <ProductGallery images={gallery} productName={product.name} />
 
           <div>
             <p className="eyebrow">{product.category}</p>
@@ -91,7 +88,7 @@ export default async function ProductPage({ params }: { params: ProductParams })
               {product.concerns.map((concern) => (
                 <span
                   key={concern}
-                  className="border border-line px-3 py-1 text-[0.72rem] uppercase tracking-[0.12em] text-taupe"
+                  className="border border-line px-3 py-1.5 text-[0.72rem] uppercase tracking-[0.12em] text-taupe"
                 >
                   {concern}
                 </span>
@@ -125,8 +122,10 @@ export default async function ProductPage({ params }: { params: ProductParams })
           <section className="mt-20">
             <h2 className="font-display text-3xl text-espresso">You may also like</h2>
             <div className="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((item) => (
-                <ProductCard key={item.slug} product={item} />
+              {related.map((item, index) => (
+                <Reveal key={item.slug} delayMs={index * 80}>
+                  <ProductCard product={item} />
+                </Reveal>
               ))}
             </div>
           </section>

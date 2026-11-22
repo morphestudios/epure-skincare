@@ -3,7 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with ÉPURE Skincare. Demo contact form with client-side validation.",
+  description: "Get in touch with ÉPURE Skincare. Contact form with client-side validation.",
 };
 
 export default function ContactPage() {
@@ -16,22 +16,22 @@ export default function ContactPage() {
             Say hello
           </h1>
           <p className="mt-5 max-w-md text-muted">
-            Questions about the assortment, textures, or this portfolio demo? Send a
-            note. The form validates locally and does not deliver to a live inbox.
+            Questions about the assortment or textures? Send a note and we will read
+            it carefully.
           </p>
           <div className="mt-10 space-y-4 text-[0.95rem] text-muted">
             <p>
-              <span className="eyebrow block mb-1">Studio</span>
+              <span className="eyebrow mb-1 block">Studio</span>
               14 Buitenkant Street
               <br />
               Cape Town, 8001
             </p>
             <p>
-              <span className="eyebrow block mb-1">Email</span>
-              hello@epureskincare.demo
+              <span className="eyebrow mb-1 block">Email</span>
+              hello@epure.studio
             </p>
             <p>
-              <span className="eyebrow block mb-1">Hours</span>
+              <span className="eyebrow mb-1 block">Hours</span>
               Weekdays 09:00–17:00 SAST
             </p>
           </div>

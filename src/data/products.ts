@@ -41,9 +41,18 @@ export const products: Product[] = [
     ],
     howToUse:
       "After cleansing, dispense two pumps onto damp skin. Press gently over face and neck, then follow with moisturizer.",
-    image:
-      "https://images.unsplash.com/photo-1620916561256-420163b90d18?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Amber dropper bottle of Luminous Serum on warm stone",
+    image: "/images/products/luminous-serum.jpg",
+    imageAlt: "Amber dropper bottle nestled among soft rose petals on marble",
+    gallery: [
+      {
+        src: "/images/products/luminous-serum.jpg",
+        alt: "Amber dropper bottle nestled among soft rose petals on marble",
+      },
+      {
+        src: "/images/products/luminous-serum-2.jpg",
+        alt: "Hands holding a clear dropper with a single serum droplet",
+      },
+    ],
     featured: true,
   },
   {
@@ -67,9 +76,18 @@ export const products: Product[] = [
     ],
     howToUse:
       "Massage a pearl-sized amount onto dry skin. Add water to emulsify, then rinse thoroughly. Follow with a second cleanse if preferred.",
-    image:
-      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Creamy cleansing balm jar with soft natural light",
+    image: "/images/products/velvet-cleansing-balm.jpg",
+    imageAlt: "Clear glass cream jars with matte lids beside smooth stones",
+    gallery: [
+      {
+        src: "/images/products/velvet-cleansing-balm.jpg",
+        alt: "Clear glass cream jars with matte lids beside smooth stones",
+      },
+      {
+        src: "/images/products/velvet-cleansing-balm-2.jpg",
+        alt: "Rich cream texture smoothed across the back of a hand",
+      },
+    ],
     featured: true,
   },
   {
@@ -95,9 +113,18 @@ export const products: Product[] = [
     ],
     howToUse:
       "Apply a pea-sized amount morning and night after serum. Press into cheeks and forehead until absorbed.",
-    image:
-      "https://images.unsplash.com/photo-1570194065650-d99fb4b38b17?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "White jar of Barrier Recovery Cream beside linen",
+    image: "/images/products/barrier-recovery-cream.jpg",
+    imageAlt: "Open cream jar held during a soft post-bath moisturising ritual",
+    gallery: [
+      {
+        src: "/images/products/barrier-recovery-cream.jpg",
+        alt: "Open cream jar held during a soft post-bath moisturising ritual",
+      },
+      {
+        src: "/images/products/barrier-recovery-cream-2.jpg",
+        alt: "Glass cream jar with charcoal lid on warm sand surface",
+      },
+    ],
     featured: true,
   },
   {
@@ -120,9 +147,18 @@ export const products: Product[] = [
     ],
     howToUse:
       "Hold 20 cm from the face and mist two to three times. Allow to settle, or blot lightly before the next step.",
-    image:
-      "https://images.unsplash.com/photo-1596755389378-c31d21fd24b0?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Frosted mist bottle with water droplets",
+    image: "/images/products/mineral-soft-mist.jpg",
+    imageAlt: "Amber mist and treatment bottles arranged with mineral crystals",
+    gallery: [
+      {
+        src: "/images/products/mineral-soft-mist.jpg",
+        alt: "Amber mist and treatment bottles arranged with mineral crystals",
+      },
+      {
+        src: "/images/products/mineral-soft-mist-2.jpg",
+        alt: "Unlabelled amber bottles on pale marble with sea salt",
+      },
+    ],
   },
   {
     slug: "night-renewal-oil",
@@ -144,9 +180,18 @@ export const products: Product[] = [
     ],
     howToUse:
       "Warm three drops between palms and press over face and neck as the final evening step. Can be mixed into cream.",
-    image:
-      "https://images.unsplash.com/photo-1608248543807-ec263c9f3f14?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Golden facial oil bottle with dropper on dark wood",
+    image: "/images/products/night-renewal-oil.jpg",
+    imageAlt: "Amber oil dropper bottle beside a peach rose on ivory linen",
+    gallery: [
+      {
+        src: "/images/products/night-renewal-oil.jpg",
+        alt: "Amber oil dropper bottle beside a peach rose on ivory linen",
+      },
+      {
+        src: "/images/products/night-renewal-oil-2.jpg",
+        alt: "Hands preparing a dropper bottle in soft natural light",
+      },
+    ],
     featured: true,
   },
   {
@@ -170,9 +215,18 @@ export const products: Product[] = [
     ],
     howToUse:
       "On damp skin, massage in circular motions for 45 seconds. Rinse with lukewarm water. Avoid the eye area.",
-    image:
-      "https://images.unsplash.com/photo-1601049676869-702ea24cfd58?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Neutral tube of Gentle Enzyme Polish on ceramic",
+    image: "/images/products/gentle-enzyme-polish.jpg",
+    imageAlt: "Blank white polish tube resting on green leaves and light wood",
+    gallery: [
+      {
+        src: "/images/products/gentle-enzyme-polish.jpg",
+        alt: "Blank white polish tube resting on green leaves and light wood",
+      },
+      {
+        src: "/images/products/gentle-enzyme-polish-2.jpg",
+        alt: "Botanical polish ingredients in ceramic and wood bowls",
+      },
+    ],
   },
   {
     slug: "eye-contour-concentrate",
@@ -195,9 +249,18 @@ export const products: Product[] = [
     ],
     howToUse:
       "Pat a rice-grain amount around the orbital bone morning and night. Do not pull or tug the skin.",
-    image:
-      "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Compact eye concentrate bottle on marble surface",
+    image: "/images/products/eye-contour-concentrate.jpg",
+    imageAlt: "Calm eye-area care ritual with soft gel patches",
+    gallery: [
+      {
+        src: "/images/products/eye-contour-concentrate.jpg",
+        alt: "Calm eye-area care ritual with soft gel patches",
+      },
+      {
+        src: "/images/products/eye-contour-concentrate-2.jpg",
+        alt: "Clear concentrate dropper with a luminous droplet",
+      },
+    ],
   },
   {
     slug: "daily-spf-fluid",
@@ -220,9 +283,18 @@ export const products: Product[] = [
     ],
     howToUse:
       "As the last daytime skincare step, apply two finger-lengths to face and neck. Reapply as needed when outdoors.",
-    image:
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Minimalist bottle of Daily SPF Fluid in soft daylight",
+    image: "/images/products/daily-spf-fluid.jpg",
+    imageAlt: "Unlabelled amber fluid bottles on pale stone with mineral salt",
+    gallery: [
+      {
+        src: "/images/products/daily-spf-fluid.jpg",
+        alt: "Unlabelled amber fluid bottles on pale stone with mineral salt",
+      },
+      {
+        src: "/images/products/daily-spf-fluid-2.jpg",
+        alt: "Sheer cream texture smoothed across skin in soft light",
+      },
+    ],
   },
   {
     slug: "calming-tonic",
@@ -245,9 +317,18 @@ export const products: Product[] = [
     ],
     howToUse:
       "Saturate a cotton pad or pour into palms and press over face after cleansing. Do not rinse.",
-    image:
-      "https://images.unsplash.com/photo-1571781926291-c77dafcfcbaf?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Clear bottle of Calming Tonic with soft botanical backdrop",
+    image: "/images/products/calming-tonic.jpg",
+    imageAlt: "Clear glass tonic bottle with soft caustic light on sand",
+    gallery: [
+      {
+        src: "/images/products/calming-tonic.jpg",
+        alt: "Clear glass tonic bottle with soft caustic light on sand",
+      },
+      {
+        src: "/images/products/calming-tonic-2.jpg",
+        alt: "Fresh botanical seedlings arranged on white marble",
+      },
+    ],
   },
 ];
 

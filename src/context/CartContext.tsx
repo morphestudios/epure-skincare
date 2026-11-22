@@ -4,9 +4,8 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import { getProductBySlug } from "@/data/products";
@@ -41,65 +40,74 @@ function normalizeItems(items: CartItem[]): CartItem[] {
     }));
 }
 
+function readCart(): CartItem[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as CartItem[];
+    return Array.isArray(parsed) ? normalizeItems(parsed) : [];
+  } catch {
+    return [];
+  }
+}
+
+function writeCart(items: CartItem[]) {
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  window.dispatchEvent(new Event("epure-cart"));
+}
+
+function subscribe(onStoreChange: () => void) {
+  const handler = () => onStoreChange();
+  window.addEventListener("storage", handler);
+  window.addEventListener("epure-cart", handler);
+  return () => {
+    window.removeEventListener("storage", handler);
+    window.removeEventListener("epure-cart", handler);
+  };
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw) as CartItem[];
-        if (Array.isArray(parsed)) {
-          setItems(normalizeItems(parsed));
-        }
-      }
-    } catch {
-      // Ignore corrupt storage; start empty.
-    } finally {
-      setHydrated(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!hydrated) return;
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-  }, [items, hydrated]);
+  const items = useSyncExternalStore(subscribe, readCart, () => []);
+  const hydrated = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
 
   const addItem = useCallback((slug: string, quantity = 1) => {
     if (!getProductBySlug(slug)) return;
-    setItems((prev) => {
-      const existing = prev.find((item) => item.slug === slug);
-      if (existing) {
-        return normalizeItems(
+    const prev = readCart();
+    const existing = prev.find((item) => item.slug === slug);
+    const next = existing
+      ? normalizeItems(
           prev.map((item) =>
             item.slug === slug
               ? { ...item, quantity: item.quantity + quantity }
               : item,
           ),
-        );
-      }
-      return normalizeItems([...prev, { slug, quantity }]);
-    });
+        )
+      : normalizeItems([...prev, { slug, quantity }]);
+    writeCart(next);
   }, []);
 
   const removeItem = useCallback((slug: string) => {
-    setItems((prev) => prev.filter((item) => item.slug !== slug));
+    writeCart(readCart().filter((item) => item.slug !== slug));
   }, []);
 
   const setQuantity = useCallback((slug: string, quantity: number) => {
     if (quantity <= 0) {
-      setItems((prev) => prev.filter((item) => item.slug !== slug));
+      writeCart(readCart().filter((item) => item.slug !== slug));
       return;
     }
-    setItems((prev) =>
+    writeCart(
       normalizeItems(
-        prev.map((item) => (item.slug === slug ? { ...item, quantity } : item)),
+        readCart().map((item) => (item.slug === slug ? { ...item, quantity } : item)),
       ),
     );
   }, []);
 
-  const clearCart = useCallback(() => setItems([]), []);
+  const clearCart = useCallback(() => writeCart([]), []);
 
   const lines = useMemo<CartLine[]>(
     () =>

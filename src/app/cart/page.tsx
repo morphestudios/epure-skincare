@@ -3,7 +3,7 @@ import { CartView } from "@/components/CartView";
 
 export const metadata: Metadata = {
   title: "Cart",
-  description: "Review your ÉPURE Skincare cart. Demo storefront with localStorage persistence.",
+  description: "Review your ÉPURE Skincare bag. Cart persists in your browser.",
 };
 
 export default function CartPage() {

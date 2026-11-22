@@ -18,14 +18,17 @@ export function AddToCartButton({ slug }: { slug: string }) {
       />
       <button
         type="button"
-        className="btn btn-primary min-w-[12rem]"
+        className={`btn min-w-[12rem] transition-colors ${
+          added ? "border border-espresso bg-sand text-espresso" : "btn-primary"
+        }`}
+        aria-live="polite"
         onClick={() => {
           addItem(slug, quantity);
           setAdded(true);
-          window.setTimeout(() => setAdded(false), 1800);
+          window.setTimeout(() => setAdded(false), 2000);
         }}
       >
-        {added ? "Added to cart" : "Add to cart"}
+        {added ? "Added to bag" : "Add to bag"}
       </button>
     </div>
   );

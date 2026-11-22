@@ -23,7 +23,7 @@ export function CartView() {
   if (lines.length === 0) {
     return (
       <EmptyState
-        title="Your cart is empty"
+        title="Your bag is empty"
         description="Browse the collection and add formulas that suit your ritual."
         actionHref="/shop"
         actionLabel="Continue shopping"
@@ -39,13 +39,13 @@ export function CartView() {
             key={line.slug}
             className="grid gap-4 border-b border-line pb-6 sm:grid-cols-[7rem_1fr_auto]"
           >
-            <Link href={`/shop/${line.slug}`} className="product-media aspect-square">
+            <Link href={`/shop/${line.slug}`} className="product-media relative aspect-square">
               <Image
                 src={line.product.image}
                 alt={line.product.imageAlt}
-                width={200}
-                height={200}
-                className="h-full w-full object-cover"
+                fill
+                className="object-cover"
+                sizes="112px"
               />
             </Link>
             <div>
@@ -64,7 +64,7 @@ export function CartView() {
               </div>
               <button
                 type="button"
-                className="btn btn-ghost mt-3 text-[0.72rem]"
+                className="btn btn-ghost mt-3 min-h-11 text-[0.72rem]"
                 onClick={() => removeItem(line.slug)}
               >
                 Remove
@@ -77,19 +77,19 @@ export function CartView() {
         ))}
       </ul>
 
-      <aside className="h-fit border border-line bg-surface p-6">
+      <aside className="h-fit border border-line bg-surface p-6 sm:p-7">
         <h2 className="font-display text-2xl text-espresso">Summary</h2>
         <div className="mt-6 flex items-center justify-between text-[0.95rem]">
           <span className="text-muted">Subtotal</span>
           <span className="text-espresso">{formatZar(subtotal)}</span>
         </div>
-        <p className="mt-3 text-sm text-taupe">
-          Shipping calculated at checkout. This is a demo storefront—no payment is taken.
+        <p className="mt-3 text-sm leading-relaxed text-taupe">
+          Shipping is calculated at checkout. Complimentary over R1,500.
         </p>
         <Link href="/checkout" className="btn btn-primary mt-6 w-full">
-          Proceed to checkout
+          Continue
         </Link>
-        <Link href="/shop" className="btn btn-ghost mt-3 w-full justify-center">
+        <Link href="/shop" className="btn btn-ghost mt-3 w-full justify-center min-h-11">
           Continue shopping
         </Link>
       </aside>

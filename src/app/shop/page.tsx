@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { EmptyState } from "@/components/EmptyState";
 import { ProductCard } from "@/components/ProductCard";
+import { Reveal } from "@/components/Reveal";
 import { ShopFilters } from "@/components/ShopFilters";
 import { filterAndSortProducts } from "@/data/products";
 import type { SortOption } from "@/lib/types";
@@ -71,9 +72,11 @@ export default async function ShopPage({
             />
           </div>
         ) : (
-          <div className="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((product) => (
-              <ProductCard key={product.slug} product={product} />
+          <div className="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {products.map((product, index) => (
+              <Reveal key={product.slug} delayMs={Math.min(index, 5) * 70}>
+                <ProductCard product={product} priority={index < 3} />
+              </Reveal>
             ))}
           </div>
         )}

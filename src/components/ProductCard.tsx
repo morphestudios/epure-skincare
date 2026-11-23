@@ -17,12 +17,12 @@ export function ProductCard({
           <Image
             src={product.image}
             alt={product.imageAlt}
-            width={800}
-            height={1000}
+            width={418}
+            height={418}
             priority={priority}
             loading={priority ? "eager" : "lazy"}
-            className="h-full w-full object-cover"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="h-full w-full object-contain object-center animate-image-reveal"
+            sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 280px"
           />
         </div>
         <div className="mt-4 space-y-1.5">
@@ -33,9 +33,10 @@ export function ProductCard({
             {product.name}
           </h3>
           <p className="text-[0.95rem] leading-relaxed text-muted">{product.tagline}</p>
-          <p className="pt-1 text-[0.95rem] tracking-wide text-espresso">
+          <p className="pt-1 text-[0.95rem] tracking-wide text-espresso transition-colors duration-500 group-hover:text-taupe">
             {formatZar(product.priceZar)}
           </p>
+          <span className="product-rule mt-3 block" aria-hidden />
         </div>
       </Link>
     </article>

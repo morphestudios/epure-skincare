@@ -4,7 +4,8 @@ import { EmptyState } from "@/components/EmptyState";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 import { ShopFilters } from "@/components/ShopFilters";
-import { filterAndSortProducts } from "@/data/products";
+import { ShopSpotlight } from "@/components/shop/ShopSpotlight";
+import { filterAndSortProducts, getProductBySlug } from "@/data/products";
 import type { SortOption } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -93,20 +94,26 @@ export default function ShopPage({
 }: {
   searchParams: ShopSearchParams;
 }) {
+  const spotlight = getProductBySlug("night-renewal-oil");
+
   return (
-    <div className="section-pad">
+    <div className="pb-16 pt-12 md:pt-16">
       <div className="container-page">
         <div className="max-w-2xl">
           <p className="eyebrow">Shop</p>
           <h1 className="mt-2 font-display text-4xl text-espresso sm:text-5xl md:mt-3 md:text-6xl">
             The collection
           </h1>
-          <p className="mt-3 hidden text-muted sm:block md:mt-4">
+          <p className="mt-3 hidden max-w-xl text-muted sm:block md:mt-4">
             Filter by category or skin concern, then sort to find the right texture
             for your ritual.
           </p>
         </div>
+      </div>
 
+      {spotlight ? <ShopSpotlight product={spotlight} /> : null}
+
+      <div className="container-page">
         <Suspense fallback={<ResultsFallback />}>
           <ShopResults searchParams={searchParams} />
         </Suspense>

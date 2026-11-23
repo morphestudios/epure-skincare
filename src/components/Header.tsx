@@ -80,8 +80,11 @@ export function Header() {
             onClick={closeMenu}
             className="nav-link inline-flex min-h-11 min-w-11 items-center text-[0.78rem] uppercase tracking-[0.16em] text-espresso"
             aria-label={hydrated ? `Cart, ${itemCount} items` : "Cart"}
+            suppressHydrationWarning
           >
-            Cart{hydrated && itemCount > 0 ? ` (${itemCount})` : ""}
+            <span suppressHydrationWarning>
+              Cart{hydrated && itemCount > 0 ? ` (${itemCount})` : ""}
+            </span>
           </Link>
 
           <button

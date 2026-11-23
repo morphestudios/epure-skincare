@@ -62,11 +62,18 @@ export function ContactForm() {
           id="contact-name"
           className="input"
           autoComplete="name"
+          required
+          aria-required="true"
+          aria-describedby={errors.name ? "contact-name-error" : undefined}
           value={values.name}
           onChange={(event) => setValues((prev) => ({ ...prev, name: event.target.value }))}
           aria-invalid={Boolean(errors.name)}
         />
-        {errors.name ? <p className="field-error">{errors.name}</p> : null}
+        {errors.name ? (
+          <p id="contact-name-error" className="field-error" role="alert">
+            {errors.name}
+          </p>
+        ) : null}
       </div>
       <div>
         <label htmlFor="contact-email" className="eyebrow mb-2 block">
@@ -77,11 +84,18 @@ export function ContactForm() {
           type="email"
           className="input"
           autoComplete="email"
+          required
+          aria-required="true"
+          aria-describedby={errors.email ? "contact-email-error" : undefined}
           value={values.email}
           onChange={(event) => setValues((prev) => ({ ...prev, email: event.target.value }))}
           aria-invalid={Boolean(errors.email)}
         />
-        {errors.email ? <p className="field-error">{errors.email}</p> : null}
+        {errors.email ? (
+          <p id="contact-email-error" className="field-error" role="alert">
+            {errors.email}
+          </p>
+        ) : null}
       </div>
       <div>
         <label htmlFor="contact-message" className="eyebrow mb-2 block">
@@ -90,14 +104,24 @@ export function ContactForm() {
         <textarea
           id="contact-message"
           className="textarea"
+          required
+          aria-required="true"
+          aria-describedby={errors.message ? "contact-message-error" : "contact-demo-note"}
           value={values.message}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, message: event.target.value }))
           }
           aria-invalid={Boolean(errors.message)}
         />
-        {errors.message ? <p className="field-error">{errors.message}</p> : null}
+        {errors.message ? (
+          <p id="contact-message-error" className="field-error" role="alert">
+            {errors.message}
+          </p>
+        ) : null}
       </div>
+      <p id="contact-demo-note" className="text-sm text-muted">
+        Demonstration only. A valid note stays in this browser and is not emailed.
+      </p>
       <button type="submit" className="btn btn-primary">
         Send message
       </button>

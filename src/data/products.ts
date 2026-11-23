@@ -40,17 +40,18 @@ export const products: Product[] = [
       "Xanthan Gum",
     ],
     howToUse:
-      "After cleansing, dispense two pumps onto damp skin. Press gently over face and neck, then follow with moisturizer.",
-    image: "/images/products/luminous-serum.jpg",
-    imageAlt: "Amber dropper bottle nestled among soft rose petals on marble",
+      "After cleansing, draw a small amount with the dropper onto clean skin. Press gently over face and neck, then follow with moisturizer.",
+    image: "/images/products/luminous-serum-primary.webp",
+    imageAlt:
+      "ÉPURE Luminous Serum glass dropper bottle on limestone, with champagne silk",
     gallery: [
       {
-        src: "/images/products/luminous-serum.jpg",
-        alt: "Amber dropper bottle nestled among soft rose petals on marble",
+        src: "/images/products/luminous-serum-primary.webp",
+        alt: "ÉPURE Luminous Serum glass dropper bottle on limestone, with champagne silk",
       },
       {
-        src: "/images/products/luminous-serum-2.jpg",
-        alt: "Hands holding a clear dropper with a single serum droplet",
+        src: "/images/products/luminous-serum-secondary.webp",
+        alt: "ÉPURE Luminous Serum dropper bottle against a limestone block, silk in the foreground",
       },
     ],
     featured: true,
@@ -76,16 +77,17 @@ export const products: Product[] = [
     ],
     howToUse:
       "Massage a pearl-sized amount onto dry skin. Add water to emulsify, then rinse thoroughly. Follow with a second cleanse if preferred.",
-    image: "/images/products/velvet-cleansing-balm.jpg",
-    imageAlt: "Clear glass cream jars with matte lids beside smooth stones",
+    image: "/images/products/velvet-cleansing-balm-primary.webp",
+    imageAlt:
+      "ÉPURE Velvet Cleansing Balm jar on limestone, with champagne silk and a trace of balm",
     gallery: [
       {
-        src: "/images/products/velvet-cleansing-balm.jpg",
-        alt: "Clear glass cream jars with matte lids beside smooth stones",
+        src: "/images/products/velvet-cleansing-balm-primary.webp",
+        alt: "ÉPURE Velvet Cleansing Balm jar on limestone, with champagne silk and a trace of balm",
       },
       {
-        src: "/images/products/velvet-cleansing-balm-2.jpg",
-        alt: "Rich cream texture smoothed across the back of a hand",
+        src: "/images/products/velvet-cleansing-balm-secondary.webp",
+        alt: "Open ÉPURE Velvet Cleansing Balm jar, gold lid resting beside the balm",
       },
     ],
     featured: true,
@@ -113,16 +115,17 @@ export const products: Product[] = [
     ],
     howToUse:
       "Apply a pea-sized amount morning and night after serum. Press into cheeks and forehead until absorbed.",
-    image: "/images/products/barrier-recovery-cream.jpg",
-    imageAlt: "ÉPURE Barrier Recovery Cream jar on warm marble — simulated branded render",
+    image: "/images/products/barrier-recovery-cream-primary.webp",
+    imageAlt:
+      "ÉPURE Barrier Recovery Cream jar with a gold lid on limestone, with champagne silk",
     gallery: [
       {
-        src: "/images/products/barrier-recovery-cream.jpg",
-        alt: "ÉPURE Barrier Recovery Cream jar on warm marble — simulated branded render",
+        src: "/images/products/barrier-recovery-cream-primary.webp",
+        alt: "ÉPURE Barrier Recovery Cream jar with a gold lid on limestone, with champagne silk",
       },
       {
-        src: "/images/products/barrier-recovery-cream-2.jpg",
-        alt: "Dense ivory cream texture on ceramic spatula — simulated beauty macro",
+        src: "/images/products/barrier-recovery-cream-secondary.webp",
+        alt: "ÉPURE Barrier Recovery Cream jar, closer, on limestone with champagne silk",
       },
     ],
     featured: true,
@@ -147,16 +150,17 @@ export const products: Product[] = [
     ],
     howToUse:
       "Hold 20 cm from the face and mist two to three times. Allow to settle, or blot lightly before the next step.",
-    image: "/images/products/mineral-soft-mist.jpg",
-    imageAlt: "Amber mist and treatment bottles arranged with mineral crystals",
+    image: "/images/products/mineral-soft-mist-primary.webp",
+    imageAlt:
+      "ÉPURE Mineral Soft Mist glass spray bottle on limestone, with champagne silk and a fine mist",
     gallery: [
       {
-        src: "/images/products/mineral-soft-mist.jpg",
-        alt: "Amber mist and treatment bottles arranged with mineral crystals",
+        src: "/images/products/mineral-soft-mist-primary.webp",
+        alt: "ÉPURE Mineral Soft Mist glass spray bottle on limestone, with champagne silk and a fine mist",
       },
       {
-        src: "/images/products/mineral-soft-mist-2.jpg",
-        alt: "Soft hydrated hands after a refreshing mist ritual",
+        src: "/images/products/mineral-soft-mist-secondary.webp",
+        alt: "ÉPURE Mineral Soft Mist spray bottle on limestone, releasing a fine mist",
       },
     ],
   },
@@ -180,16 +184,17 @@ export const products: Product[] = [
     ],
     howToUse:
       "Warm three drops between palms and press over face and neck as the final evening step. Can be mixed into cream.",
-    image: "/images/products/night-renewal-oil.jpg",
-    imageAlt: "Amber oil dropper bottle beside a peach rose on ivory linen",
+    image: "/images/products/night-renewal-oil-primary.webp",
+    imageAlt:
+      "ÉPURE Night Renewal Oil glass dropper bottle on limestone, with champagne silk",
     gallery: [
       {
-        src: "/images/products/night-renewal-oil.jpg",
-        alt: "Amber oil dropper bottle beside a peach rose on ivory linen",
+        src: "/images/products/night-renewal-oil-primary.webp",
+        alt: "ÉPURE Night Renewal Oil glass dropper bottle on limestone, with champagne silk",
       },
       {
-        src: "/images/products/night-renewal-oil-2.jpg",
-        alt: "Hands preparing a dropper bottle in soft natural light",
+        src: "/images/products/night-renewal-oil-secondary.webp",
+        alt: "ÉPURE Night Renewal Oil dropper bottle against a limestone block, silk in the foreground",
       },
     ],
     featured: true,
@@ -215,16 +220,17 @@ export const products: Product[] = [
     ],
     howToUse:
       "On damp skin, massage in circular motions for 45 seconds. Rinse with lukewarm water. Avoid the eye area.",
-    image: "/images/products/gentle-enzyme-polish.jpg",
-    imageAlt: "Blank white polish tube resting on green leaves and light wood",
+    image: "/images/products/gentle-enzyme-polish-primary.webp",
+    imageAlt:
+      "ÉPURE Gentle Enzyme Polish jar with a gold lid on limestone, beside a dish of polish and champagne silk",
     gallery: [
       {
-        src: "/images/products/gentle-enzyme-polish.jpg",
-        alt: "Blank white polish tube resting on green leaves and light wood",
+        src: "/images/products/gentle-enzyme-polish-primary.webp",
+        alt: "ÉPURE Gentle Enzyme Polish jar with a gold lid on limestone, beside a dish of polish and champagne silk",
       },
       {
-        src: "/images/products/gentle-enzyme-polish-2.jpg",
-        alt: "Botanical polish ingredients in ceramic and wood bowls",
+        src: "/images/products/gentle-enzyme-polish-secondary.webp",
+        alt: "Open ÉPURE Gentle Enzyme Polish jar, gold lid resting beside the polish",
       },
     ],
   },
@@ -233,7 +239,7 @@ export const products: Product[] = [
     name: "Eye Contour Concentrate",
     tagline: "A cool gel-cream for the delicate eye area.",
     description:
-      "Eye Contour Concentrate is a featherweight gel-cream with caffeine and peptides for a refreshed look around the orbital area. The applicator tip stays cool; the finish is barely there. Pair with moisturizer if the under-eye feels particularly dry.",
+      "Eye Contour Concentrate is a featherweight gel-cream with caffeine and peptides for a refreshed look around the orbital area. The finish is barely there. Pair with moisturizer if the under-eye feels particularly dry.",
     priceZar: 750,
     size: "15 ml",
     category: "Treatments",
@@ -249,16 +255,17 @@ export const products: Product[] = [
     ],
     howToUse:
       "Pat a rice-grain amount around the orbital bone morning and night. Do not pull or tug the skin.",
-    image: "/images/products/eye-contour-concentrate.jpg",
-    imageAlt: "ÉPURE Eye Contour Concentrate tube on linen — simulated branded render",
+    image: "/images/products/eye-contour-concentrate-secondary.webp",
+    imageAlt:
+      "ÉPURE Eye Contour Concentrate pump bottle on limestone, with champagne silk",
     gallery: [
       {
-        src: "/images/products/eye-contour-concentrate.jpg",
-        alt: "ÉPURE Eye Contour Concentrate tube on linen — simulated branded render",
+        src: "/images/products/eye-contour-concentrate-secondary.webp",
+        alt: "ÉPURE Eye Contour Concentrate pump bottle on limestone, with champagne silk",
       },
       {
-        src: "/images/products/eye-contour-concentrate-2.jpg",
-        alt: "Cool clear gel droplet on fingertip — simulated beauty detail",
+        src: "/images/products/eye-contour-concentrate-editorial-candidate.webp",
+        alt: "ÉPURE Eye Contour Concentrate pump bottle at a three-quarter angle on limestone, with champagne silk and a trace of gel-cream",
       },
     ],
   },
@@ -283,16 +290,17 @@ export const products: Product[] = [
     ],
     howToUse:
       "As the last daytime skincare step, apply two finger-lengths to face and neck. Reapply as needed when outdoors.",
-    image: "/images/products/daily-spf-fluid.jpg",
-    imageAlt: "ÉPURE Daily SPF Fluid pump bottle on limestone — simulated branded render",
+    image: "/images/products/daily-spf-fluid-primary-candidate.webp",
+    imageAlt:
+      "ÉPURE Daily SPF Fluid ivory tube with a champagne-gold cap on limestone, beside champagne silk",
     gallery: [
       {
-        src: "/images/products/daily-spf-fluid.jpg",
-        alt: "ÉPURE Daily SPF Fluid pump bottle on limestone — simulated branded render",
+        src: "/images/products/daily-spf-fluid-primary-candidate.webp",
+        alt: "ÉPURE Daily SPF Fluid ivory tube with a champagne-gold cap on limestone, beside champagne silk",
       },
       {
-        src: "/images/products/daily-spf-fluid-2.jpg",
-        alt: "Sheer tinted SPF film smoothed across skin — simulated beauty macro",
+        src: "/images/products/daily-spf-fluid-campaign-secondary.webp",
+        alt: "ÉPURE Daily SPF Fluid ivory tube lying diagonally on limestone, with a champagne-gold cap and champagne silk",
       },
     ],
   },
@@ -317,16 +325,17 @@ export const products: Product[] = [
     ],
     howToUse:
       "Saturate a cotton pad or pour into palms and press over face after cleansing. Do not rinse.",
-    image: "/images/products/calming-tonic.jpg",
-    imageAlt: "Clear tonic droplet falling from a glass dropper into an open palm",
+    image: "/images/products/calming-tonic-campaign-primary.webp",
+    imageAlt:
+      "ÉPURE Calming Tonic amber glass bottle with a champagne-gold cap on limestone, beside champagne silk",
     gallery: [
       {
-        src: "/images/products/calming-tonic.jpg",
-        alt: "Clear tonic droplet falling from a glass dropper into an open palm",
+        src: "/images/products/calming-tonic-campaign-primary.webp",
+        alt: "ÉPURE Calming Tonic amber glass bottle with a champagne-gold cap on limestone, beside champagne silk",
       },
       {
-        src: "/images/products/calming-tonic-2.jpg",
-        alt: "Fresh botanical seedlings arranged on white marble",
+        src: "/images/products/calming-tonic-campaign-secondary.webp",
+        alt: "ÉPURE Calming Tonic amber glass bottle at a three-quarter angle on limestone, with champagne silk",
       },
     ],
   },

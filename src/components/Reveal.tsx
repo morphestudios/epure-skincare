@@ -15,11 +15,11 @@ function prefersReducedMotion() {
 
 export function Reveal({ children, className = "", delayMs = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(() => prefersReducedMotion());
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
-    if (!node || visible) return;
+    if (!node || visible || prefersReducedMotion()) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {

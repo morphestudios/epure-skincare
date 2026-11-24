@@ -16,6 +16,18 @@ export function HeroStudy() {
       className={`hero-study${entered ? " is-entered" : ""}`}
       aria-labelledby="hero-study-title"
     >
+      <div className="hero-study-field" aria-hidden="true" />
+      <picture className="hero-study-haze-picture">
+        <source
+          media="(min-width: 768px)"
+          srcSet="/images/lifestyle/hero-study-desktop.webp"
+        />
+        <img
+          src="/images/lifestyle/hero-study-mobile.webp"
+          alt=""
+          className="hero-study-haze"
+        />
+      </picture>
       <picture className="hero-study-picture">
         <source
           media="(min-width: 768px)"
@@ -34,8 +46,8 @@ export function HeroStudy() {
       <div className="hero-study-copy">
         <p className="hero-study-kicker">The art of ritual</p>
         <h2 id="hero-study-title" className="hero-study-title font-display">
-          Quiet
-          <span className="block">formulas</span>
+          <span className="hero-study-line">Quiet</span>
+          <span className="hero-study-line">formulas</span>
           <span className="hero-study-title-rest">for considered skin.</span>
         </h2>
         <p className="hero-study-deck">
